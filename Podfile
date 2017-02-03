@@ -6,6 +6,7 @@ target 'Tumbler Feed' do
   use_frameworks!
 
   # Pods for Tumbler Feed
+  pod 'AFNetworking'
   
 
 end

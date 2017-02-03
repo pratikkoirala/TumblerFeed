@@ -12,6 +12,8 @@
 		3010752A1E41625B003A905C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301075291E41625B003A905C /* Assets.xcassets */; };
 		3010752D1E41625B003A905C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3010752B1E41625B003A905C /* LaunchScreen.storyboard */; };
 		301075351E416532003A905C /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301075341E416532003A905C /* PhotosViewController.swift */; };
+		3040CD811E43FAA600304682 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3040CD801E43FAA600304682 /* FeedCell.swift */; };
+		F2471D193BB244EE23AEA00C /* Pods_Tumbler_Feed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C80713240A7DE154613003 /* Pods_Tumbler_Feed.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		3010752C1E41625B003A905C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3010752E1E41625B003A905C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301075341E416532003A905C /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		3040CD801E43FAA600304682 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		560B95CCBC825602520F8F39 /* Pods-Tumbler Feed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumbler Feed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tumbler Feed/Pods-Tumbler Feed.debug.xcconfig"; sourceTree = "<group>"; };
+		DAB0DF0C99147105DAFB0BCE /* Pods-Tumbler Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumbler Feed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tumbler Feed/Pods-Tumbler Feed.release.xcconfig"; sourceTree = "<group>"; };
+		F7C80713240A7DE154613003 /* Pods_Tumbler_Feed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tumbler_Feed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2471D193BB244EE23AEA00C /* Pods_Tumbler_Feed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				301075211E41625B003A905C /* Tumbler Feed */,
 				301075201E41625B003A905C /* Products */,
+				A5B25C9A8A5EF8F5AF80C0A5 /* Pods */,
+				65FCB347D1D91AC6FEFCE40C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +63,7 @@
 		301075211E41625B003A905C /* Tumbler Feed */ = {
 			isa = PBXGroup;
 			children = (
+				3040CD821E43FD4D00304682 /* views */,
 				301075361E416566003A905C /* view controller */,
 				301075221E41625B003A905C /* AppDelegate.swift */,
 				301075261E41625B003A905C /* Main.storyboard */,
@@ -72,6 +82,31 @@
 			name = "view controller";
 			sourceTree = "<group>";
 		};
+		3040CD821E43FD4D00304682 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3040CD801E43FAA600304682 /* FeedCell.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		65FCB347D1D91AC6FEFCE40C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7C80713240A7DE154613003 /* Pods_Tumbler_Feed.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5B25C9A8A5EF8F5AF80C0A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				560B95CCBC825602520F8F39 /* Pods-Tumbler Feed.debug.xcconfig */,
+				DAB0DF0C99147105DAFB0BCE /* Pods-Tumbler Feed.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,9 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 301075311E41625B003A905C /* Build configuration list for PBXNativeTarget "Tumbler Feed" */;
 			buildPhases = (
+				95917779CEC42E08D8ABB9F6 /* [CP] Check Pods Manifest.lock */,
 				3010751B1E41625B003A905C /* Sources */,
 				3010751C1E41625B003A905C /* Frameworks */,
 				3010751D1E41625B003A905C /* Resources */,
+				423B1493B437D37CB8214177 /* [CP] Embed Pods Frameworks */,
+				3966DE0B2275922044F190C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,6 +177,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3966DE0B2275922044F190C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tumbler Feed/Pods-Tumbler Feed-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		423B1493B437D37CB8214177 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tumbler Feed/Pods-Tumbler Feed-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95917779CEC42E08D8ABB9F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3010751B1E41625B003A905C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -146,6 +232,7 @@
 			files = (
 				301075231E41625B003A905C /* AppDelegate.swift in Sources */,
 				301075351E416532003A905C /* PhotosViewController.swift in Sources */,
+				3040CD811E43FAA600304682 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +351,7 @@
 		};
 		301075321E41625B003A905C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 560B95CCBC825602520F8F39 /* Pods-Tumbler Feed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Tumbler Feed/Info.plist";
@@ -276,6 +364,7 @@
 		};
 		301075331E41625B003A905C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAB0DF0C99147105DAFB0BCE /* Pods-Tumbler Feed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Tumbler Feed/Info.plist";
@@ -305,6 +394,7 @@
 				301075331E41625B003A905C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
