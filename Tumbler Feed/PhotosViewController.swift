@@ -14,8 +14,6 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     // Save tumbler posts as an array of Dictionary values
     var posts: [NSDictionary] = []
     
-   
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -79,17 +77,20 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
-
-    
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Going to the next screen")
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)
+        let feed = posts[indexPath!.row]
+        
+        let detailViewController = segue.destination as! PhotoDetailsViewController
+        detailViewController.post = feed
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 }

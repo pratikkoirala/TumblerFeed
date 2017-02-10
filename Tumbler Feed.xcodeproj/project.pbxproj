@@ -13,6 +13,7 @@
 		3010752D1E41625B003A905C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3010752B1E41625B003A905C /* LaunchScreen.storyboard */; };
 		301075351E416532003A905C /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301075341E416532003A905C /* PhotosViewController.swift */; };
 		3040CD811E43FAA600304682 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3040CD801E43FAA600304682 /* FeedCell.swift */; };
+		30598B001E4A911500C405AA /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30598AFF1E4A911500C405AA /* PhotoDetailsViewController.swift */; };
 		F2471D193BB244EE23AEA00C /* Pods_Tumbler_Feed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C80713240A7DE154613003 /* Pods_Tumbler_Feed.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		3010752E1E41625B003A905C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301075341E416532003A905C /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		3040CD801E43FAA600304682 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		30598AFF1E4A911500C405AA /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		560B95CCBC825602520F8F39 /* Pods-Tumbler Feed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumbler Feed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tumbler Feed/Pods-Tumbler Feed.debug.xcconfig"; sourceTree = "<group>"; };
 		DAB0DF0C99147105DAFB0BCE /* Pods-Tumbler Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumbler Feed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tumbler Feed/Pods-Tumbler Feed.release.xcconfig"; sourceTree = "<group>"; };
 		F7C80713240A7DE154613003 /* Pods_Tumbler_Feed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tumbler_Feed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 		301075361E416566003A905C /* view controller */ = {
 			isa = PBXGroup;
 			children = (
+				30598AFF1E4A911500C405AA /* PhotoDetailsViewController.swift */,
 				301075341E416532003A905C /* PhotosViewController.swift */,
 			);
 			name = "view controller";
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30598B001E4A911500C405AA /* PhotoDetailsViewController.swift in Sources */,
 				301075231E41625B003A905C /* AppDelegate.swift in Sources */,
 				301075351E416532003A905C /* PhotosViewController.swift in Sources */,
 				3040CD811E43FAA600304682 /* FeedCell.swift in Sources */,
