@@ -8,7 +8,7 @@ Submitted by: **Pratik Koirala**
 
 Here's a walkthrough of the app:
 
-<img src='http://i.imgur.com/ekj4wls.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/0Syd7ay.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
