@@ -9,19 +9,32 @@
 import UIKit
 import AFNetworking
 
-class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     
     // Save tumbler posts as an array of Dictionary values
     var posts: [NSDictionary] = []
+    var isMoreDataLoading = false
     
     @IBOutlet weak var tableView: UITableView!
     
+    var loadingMoreView:InfiniteScrollActivityView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello")
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 250
+        
+        // Set up Infinite Scroll loading indicator
+        let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.isHidden = true
+        tableView.addSubview(loadingMoreView!)
+        
+        var insets = tableView.contentInset;
+        insets.bottom += InfiniteScrollActivityView.defaultHeight;
+        tableView.contentInset = insets
         
         // Initialize a UIRefreshControl
         let refreshControl = UIRefreshControl()
@@ -122,6 +135,63 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
         print("Deselected\(indexPath.row)")
     }
+    
+    // Infinite scrolling of the main feed
+    
+    func loadMoreData() {
+        let url = URL(string:"https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV")
+        let myRequest = URLRequest(url: url!)
+        
+        // Configure session so that completion handler is executed on main UI thread
+        let session = URLSession(
+            configuration: URLSessionConfiguration.default,
+            delegate:nil,
+            delegateQueue:OperationQueue.main
+        )
+        
+        let task : URLSessionDataTask = session.dataTask(with: myRequest,
+        completionHandler: { (data, response, error) in
+            // Update flag
+            self.isMoreDataLoading = false
+            self.loadingMoreView!.stopAnimating()
+            if let data = data {
+                if let responseDictionary = try! JSONSerialization.jsonObject(with: data, options:[]) as? NSDictionary {
+                    print("responseDictionary: \(responseDictionary)")
+                
+                    let responseFieldDictionary = responseDictionary["response"] as! NSDictionary
+                                                                    
+                    // This is where you will store the returned array of posts in your posts property
+                    self.posts = responseFieldDictionary["posts"] as! [NSDictionary]
+                    self.tableView.reloadData()
+                }
+            }
+        });
+        task.resume()
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (!isMoreDataLoading) {
+            isMoreDataLoading = true
+            
+            // Calculate the position of one screen length before the bottom of the results
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            
+            // When the user has scrolled past the threshold, start requesting
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.isDragging) {
+                isMoreDataLoading = true
+                // Update position of loadingMoreView, and start loading indicator
+                let frame = CGRect(x: 0, y: tableView.contentSize.height, width:tableView.bounds.size.width, height:InfiniteScrollActivityView.defaultHeight)
+                loadingMoreView?.frame = frame
+                loadingMoreView!.startAnimating()
+                
+                // Code to load more results
+                loadMoreData()
+            }
+        }
+    }
+    
+
     
     // MARK: - Navigation
 
