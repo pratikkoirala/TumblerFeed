@@ -18,6 +18,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("hello")
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -56,6 +57,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     // Set the number of rows to be returned
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,6 +77,11 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         return cell
+    }
+    // Deselect the post on the feed when going back from the details screen
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        print("Deselected\(indexPath.row)")
     }
     
     // MARK: - Navigation
